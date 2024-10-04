@@ -1,28 +1,32 @@
- //Seleciona o botão e o body
+// Selecionando o botão de alternância de tema e o corpo do documento
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Verifica o tema atual e aplica ao carregar a página
-if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark');
-    body.classList.remove('light');
-} else {
-    body.classList.add('light');
+// Função para aplicar o tema salvo no localStorage
+function applySavedTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark');
+        body.classList.remove('light');
+        themeToggle.textContent = 'Tema Claro';  // Altera o texto do botão para o modo claro
+    } else {
+        body.classList.add('light');
+        body.classList.remove('dark');
+        themeToggle.textContent = 'Tema Escuro';  // Altera o texto do botão para o modo escuro
+    }
 }
 
-// Adiciona um evento de clique ao botão
-themeToggle.addEventListener('click', () => {
+// Função para alternar entre os temas
+function toggleTheme() {
     if (body.classList.contains('light')) {
         body.classList.remove('light');
         body.classList.add('dark');
         localStorage.setItem('theme', 'dark');
-        themeToggle.classList.remove('light');
-        themeToggle.classList.add('dark');
+        themeToggle.textContent = 'Tema Claro';  // Atualiza o texto do botão
     } else {
         body.classList.remove('dark');
         body.classList.add('light');
         localStorage.setItem('theme', 'light');
-        themeToggle.classList.remove('dark');
-        themeToggle.classList.add('light');
+        themeToggle.textContent = 'Tema Escuro';  // Atualiza o texto do botão
     }
-});
+}
