@@ -100,6 +100,36 @@ nav ul li a:hover {
     color: #777;
 }
 
+/* Seção Perguntas Frequentes */
+#perguntas {
+    padding: 50px;
+    background-color: #f7f7f7;
+}
+
+#perguntas h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+/* Cards para Perguntas */
+#perguntas .card {
+    text-align: left;
+    border-left: 5px solid #4CAF50;
+    background-color: #fff;
+}
+
+#perguntas .card-title {
+    font-size: 1.4em;
+    color: #333;
+}
+
+#perguntas .card-text {
+    font-size: 1.1em;
+    color: #555;
+    padding-left: 10px;
+}
+
 /* Seção Contato */
 #contato {
     padding: 50px;
@@ -153,4 +183,4 @@ body.dark nav ul li a {
     .card {
         margin: 0 auto 20px;
     }
-    }
+}
